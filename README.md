@@ -17,8 +17,9 @@
     * **已知問題**: 程式碼尚未完全最佳化，有時可能會點擊到無法消除的配對。
     * **空方塊處理**: 舊的 `template_empty.png` 模板已放棄，目前是透過直接判斷純色來識別空方塊。程式中提到的 `template_empty_blue_green.png` 和 `template_empty_red_striped.png` 是已廢棄的模板方案，目前不使用也不會進行修改。
     * **挑戰模式背景**: 針對挑戰模式 (Challenge) 中出現的紅色背景，是利用 `persisted_e_board` 機制來「硬幹」處理，確保程式可以將這些區域視為可通過的空位。
+    * **原理**: 切割圖片，縮兩圈辨識是否純色，縮一圈切成template，主程式中self.NORMAL_TEMPLATE_WIDTH需要手動改，與self.INNER_TILE_PADDING已經切割開來了
 
-**`persisted_e_board` 原理：** 當一個（非空、非鎖定、非錯誤的）正常方塊，在下一幀中變為（空、鎖定、錯誤）的方塊時，`persisted_e_board` 會將該位置標記為「可通過的空位 `E`」，從而幫助路徑搜尋算法正確判斷棋盤狀態。
+**`persisted_e_board` 原理：** 當一個（非空、非鎖定、非錯誤的）正常方塊，在下一輪掃描中變為（空、鎖定、錯誤）的方塊時，`persisted_e_board` 會將該位置標記為「可通過的空位 `E`」，從而幫助路徑搜尋算法正確判斷棋盤狀態。
 
 ## 專案特色
 
