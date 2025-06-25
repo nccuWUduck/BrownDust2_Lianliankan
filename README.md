@@ -1,4 +1,3 @@
-好的，這就將你提供的內容直接轉換為 Markdown 格式，**不更動任何文字內容**，只添加語法，可以直接複製到 VS Code 中。
 
 ````markdown
 # BrownDust II 連連看自動消除外掛 (Lianliankan Auto-Solver Bot)
