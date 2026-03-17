@@ -44,17 +44,17 @@ graph TD
     LoopStart --> Capture[截取遊戲視窗畫面]
     Capture --> CheckMode{檢查當前模式}
     
-    CheckMode -- Dynamic --> DynamicScan[動態分類掃描<br/>(pHash + 顏色特徵)]
-    CheckMode -- Template --> TemplateScan[模板匹配掃描<br/>(預存圖庫)]
+    CheckMode -- Dynamic --> DynamicScan["動態分類掃描<br/>(pHash + 顏色特徵)"]
+    CheckMode -- Template --> TemplateScan["模板匹配掃描<br/>(預存圖庫)"]
     
     DynamicScan --> Identify[識別棋盤狀態]
     TemplateScan --> Identify
     
-    Identify --> FindPairs[計算可消除對子<br/>(BFS 搜尋 <= 2 轉彎)]
+    Identify --> FindPairs["計算可消除對子<br/>(BFS 搜尋 <= 2 轉彎)"]
     
-    FindPairs --> CheckStuck{檢測卡死狀態<br/>(重複對子 > 5?)}
+    FindPairs --> CheckStuck{"檢測卡死狀態<br/>(重複對子 > 5?)"}
     
-    CheckStuck -- Yes --> SwitchMode[切換掃描模式<br/>Dynamic <--> Template]
+    CheckStuck -- Yes --> SwitchMode["切換掃描模式<br/>Dynamic <--> Template"]
     SwitchMode --> LoopStart
     
     CheckStuck -- No --> ExecClick{有可消除對子?}
