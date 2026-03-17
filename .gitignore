@@ -1,0 +1,15 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Debug output and temporary files
+debug_board_scans/
+temp_raw_tiles/
+
+# User screenshots in root (keep templates in subfolders)
+/*.png
+!accumulated_templates_library/**/*.png
+
+# OS generated files
+Thumbs.db
+Desktop.ini
